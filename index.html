@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chloe Wade — Marketing Strategist & Analyst</title>
-  <meta name="description" content="Chloe Wade is a marketing strategist who blends creative design with data analytics — trained at Parsons, operating at the intersection of pixels and spreadsheets." />
+  <title>Chloe Wade | Marketing Strategist & Analyst</title>
+  <meta name="description" content="Chloe Wade is a marketing strategist who blends creative design with data analytics. Trained at Parsons, she operates at the intersection of pixels and spreadsheets." />
   <link rel="stylesheet" href="styles.css" />
   <style>
     /* ── Hero ─────────────────────────────────────────────────── */
@@ -13,17 +13,10 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: calc(var(--nav-h) + 3rem) clamp(1.5rem, 6vw, 5rem) 4rem;
+      padding: calc(var(--nav-h) + 1rem) clamp(1.5rem, 6vw, 5rem) 4rem;
       position: relative;
       overflow: hidden;
-    }
-
-    /* Animated data-grid canvas bg */
-    #heroCanvas {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      opacity: 0.55;
+      background: var(--bg);
     }
 
     .hero-content {
@@ -39,23 +32,12 @@
       margin-bottom: 1.5rem;
       animation: fadeUp 0.8s ease both;
     }
-    .hero-eyebrow-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      animation: pulse-dot 2s ease infinite;
-    }
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.7); }
-    }
     .hero-eyebrow-text {
       font-size: 0.8rem;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--text-muted);
+      color: var(--black);
     }
 
     .hero h1 {
@@ -79,7 +61,6 @@
     .hero-ctas {
       display: flex;
       gap: 1rem;
-      flex-wrap: wrap;
       animation: fadeUp 0.8s ease 0.3s both;
     }
 
@@ -88,7 +69,7 @@
       background: var(--bg-card);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      padding: 2.5rem clamp(1.5rem, 6vw, 5rem);
+      padding: 3.5rem clamp(1.5rem, 6vw, 5rem);
     }
     .stat-strip-inner {
       display: flex;
@@ -96,20 +77,17 @@
       gap: clamp(2rem, 6vw, 5rem);
       flex-wrap: wrap;
     }
-    .stat-item {
-      text-align: center;
-    }
+    .stat-item { text-align: center; }
     .stat-number {
       font-family: var(--serif);
       font-size: clamp(2.2rem, 5vw, 3.5rem);
       font-weight: 900;
-      color: var(--accent);
+      color: var(--black);
       line-height: 1;
-      display: block;
     }
     .stat-label {
       font-size: 0.82rem;
-      font-weight: 500;
+      font-weight: 600;
       letter-spacing: 0.08em;
       color: var(--text-muted);
       text-transform: uppercase;
@@ -119,68 +97,13 @@
     /* ── Preview Cards ────────────────────────────────────────── */
     .preview-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5rem;
-    }
-    .preview-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-      cursor: pointer;
-      transition: all var(--transition);
-      text-decoration: none;
-    }
-    .preview-card:hover {
-      border-color: rgba(219,39,99,0.35);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(219,39,99,0.1);
-    }
-    .preview-card-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: var(--accent-glow);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-    }
-    .preview-card h3 {
-      font-size: 1.15rem;
-      color: var(--white);
-    }
-    .preview-card p {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      margin: 0;
-      line-height: 1.5;
-    }
-    .preview-card-arrow {
-      margin-top: auto;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--accent);
-      letter-spacing: 0.03em;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-      transition: gap var(--transition);
-    }
-    .preview-card:hover .preview-card-arrow { gap: 0.6rem; }
-
-    @media (max-width: 640px) {
-      .hero { padding-bottom: 2rem; }
-      .stat-strip-inner { gap: 1.5rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- ── Navigation ─────────────────────────────────────────── -->
 <nav class="nav">
   <a href="index.html" class="nav-logo">Chloe<span>.</span></a>
   <ul class="nav-links">
@@ -188,7 +111,6 @@
     <li><a href="about.html">About</a></li>
     <li><a href="skills.html">Skills</a></li>
     <li><a href="experience.html">Experience</a></li>
-    <li><a href="chat.html">Ask Chloe</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -200,104 +122,83 @@
   <a href="about.html">About</a>
   <a href="skills.html">Skills</a>
   <a href="experience.html">Experience</a>
-  <a href="chat.html">Ask Chloe</a>
   <a href="contact.html">Contact</a>
 </div>
 
 <div class="page-content">
-
-  <!-- ── Hero ───────────────────────────────────────────────── -->
   <section class="hero">
-    <canvas id="heroCanvas"></canvas>
     <div class="hero-content">
       <div class="hero-eyebrow">
-        <span class="hero-eyebrow-dot"></span>
-        <span class="hero-eyebrow-text">Marketing Strategist · Analyst · Designer</span>
+        <span class="hero-eyebrow-text">Marketing Strategist / Analyst / Designer</span>
       </div>
       <h1>Where creative instinct<br>meets <em>analytical precision.</em></h1>
       <p class="hero-blurb">
-        I build campaigns that convert, systems that scale, and stories that land —
-        backed by design training from Parsons and a data-first mindset sharpened at TBS Barcelona.
+        I build campaigns that convert and systems that scale. My work is backed by design training from Parsons and a data first mindset sharpened at TBS Barcelona.
       </p>
       <div class="hero-ctas">
-        <a href="experience.html" class="btn btn-primary">See My Work →</a>
+        <a href="experience.html" class="btn btn-primary">See My Work</a>
         <a href="about.html" class="btn btn-outline">Meet Chloe</a>
       </div>
     </div>
   </section>
 
-  <!-- ── Stats ──────────────────────────────────────────────── -->
   <div class="stat-strip">
     <div class="stat-strip-inner">
       <div class="stat-item fade-up">
-        <span class="stat-number" data-target="20">0</span><span class="stat-number">%</span>
+        <span class="stat-number">20%</span>
         <span class="stat-label">ROAS Increase</span>
       </div>
       <div class="stat-item fade-up delay-1">
-        <span class="stat-number" data-target="98">0</span><span class="stat-number">%</span>
+        <span class="stat-number">98%</span>
         <span class="stat-label">On-Time Launch Rate</span>
       </div>
       <div class="stat-item fade-up delay-2">
-        <span class="stat-number" data-target="40">0</span><span class="stat-number">+</span>
+        <span class="stat-number">40+</span>
         <span class="stat-label">Team Members Led</span>
-      </div>
-      <div class="stat-item fade-up delay-3">
-        <span class="stat-number" data-target="5">0</span>
-        <span class="stat-label">Certifications</span>
       </div>
     </div>
   </div>
 
-  <!-- ── Preview Cards ──────────────────────────────────────── -->
   <section>
     <div class="section-label">Explore</div>
-    <h2 class="section-title">The full picture</h2>
+    <h2 class="section-title">The Complete Picture</h2>
     <div class="divider"></div>
     <div class="preview-grid">
-      <a href="about.html" class="preview-card fade-up">
-        <div class="preview-card-icon">🎓</div>
-        <h3>About</h3>
-        <p>Parsons BFA. TBS MSc. The rare hybrid who can sketch a brand and query a database.</p>
-        <span class="preview-card-arrow">Learn more →</span>
+      <a href="about.html" class="card fade-up">
+        <div class="img-placeholder" style="margin-bottom:1rem;">Profile Placeholder</div>
+        <h3>About Chloe</h3>
+        <p>Parsons BFA and TBS MSc. I am the rare hybrid who can sketch a brand and query a database.</p>
+        <div style="margin-top:1rem; color:var(--accent); font-weight:700; font-size:0.85rem;">Learn more</div>
       </a>
-      <a href="skills.html" class="preview-card fade-up delay-1">
-        <div class="preview-card-icon">📊</div>
+      <a href="skills.html" class="card fade-up delay-1">
+        <div class="img-placeholder" style="margin-bottom:1rem;">Skills Placeholder</div>
         <h3>Skills & Expertise</h3>
-        <p>From Google Analytics to Adobe Creative Suite — the full analytical and creative stack.</p>
-        <span class="preview-card-arrow">Explore skills →</span>
+        <p>From Google Analytics to Adobe Creative Suite. I leverage the full analytical and creative stack.</p>
+        <div style="margin-top:1rem; color:var(--accent); font-weight:700; font-size:0.85rem;">Explore skills</div>
       </a>
-      <a href="experience.html" class="preview-card fade-up delay-2">
-        <div class="preview-card-icon">⚡</div>
-        <h3>Experience</h3>
-        <p>Fashion. E-commerce. Product development. Real results, real numbers.</p>
-        <span class="preview-card-arrow">View timeline →</span>
-      </a>
-      <a href="chat.html" class="preview-card fade-up delay-3">
-        <div class="preview-card-icon">💬</div>
-        <h3>Ask Chloe AI</h3>
-        <p>An AI-powered assistant trained on Chloe's background. Ask it anything.</p>
-        <span class="preview-card-arrow">Start a conversation →</span>
+      <a href="experience.html" class="card fade-up delay-2">
+        <div class="img-placeholder" style="margin-bottom:1rem;">Experience Placeholder</div>
+        <h3>Professional Experience</h3>
+        <p>Fashion and E-commerce product development. Real results backed by real numbers.</p>
+        <div style="margin-top:1rem; color:var(--accent); font-weight:700; font-size:0.85rem;">View timeline</div>
       </a>
     </div>
   </section>
-
 </div>
 
-<!-- ── Footer ─────────────────────────────────────────────── -->
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">Chloe<span>.</span>Wade</div>
     <div class="footer-links">
       <a href="mailto:chloevwade@gmail.com">chloevwade@gmail.com</a>
-      <a href="#" target="_blank">LinkedIn</a>
+      <a href="#">LinkedIn</a>
       <a href="contact.html">Contact</a>
     </div>
   </div>
-  <p class="footer-copy">© 2026 Chloe Wade · New York City</p>
+  <p class="footer-copy">© 2026 Chloe Wade. New York City</p>
 </footer>
 
 <script>
-  // ── Nav Toggle ─────────────────────────────────────────────
   const toggle = document.getElementById('navToggle');
   const mobile = document.getElementById('navMobile');
   toggle.addEventListener('click', () => {
@@ -305,81 +206,11 @@
     mobile.classList.toggle('open');
   });
 
-  // ── Scroll Animations ──────────────────────────────────────
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-  // ── Animated Counters ──────────────────────────────────────
-  function animateCounter(el, target, duration = 1800) {
-    let start = null;
-    const step = (ts) => {
-      if (!start) start = ts;
-      const progress = Math.min((ts - start) / duration, 1);
-      const ease = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.floor(ease * target);
-      if (progress < 1) requestAnimationFrame(step);
-      else el.textContent = target;
-    };
-    requestAnimationFrame(step);
-  }
-  const statObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const el = e.target;
-        const target = parseInt(el.dataset.target);
-        animateCounter(el, target);
-        statObs.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-  document.querySelectorAll('[data-target]').forEach(el => statObs.observe(el));
-
-  // ── Hero Canvas — Data Grid Animation ─────────────────────
-  const canvas = document.getElementById('heroCanvas');
-  const ctx = canvas.getContext('2d');
-  let cols, rows, cells = [];
-
-  function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    cols = Math.ceil(canvas.width / 48);
-    rows = Math.ceil(canvas.height / 48);
-    cells = [];
-    for (let r = 0; r < rows; r++) {
-      for (let c = 0; c < cols; c++) {
-        cells.push({ r, c, alpha: Math.random() * 0.15, speed: 0.003 + Math.random() * 0.006, phase: Math.random() * Math.PI * 2 });
-      }
-    }
-  }
-
-  let animT = 0;
-  function drawGrid() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    animT += 0.012;
-    cells.forEach(cell => {
-      const a = (Math.sin(animT + cell.phase) + 1) / 2 * 0.13;
-      ctx.strokeStyle = `rgba(219, 39, 99, ${a})`;
-      ctx.lineWidth = 0.7;
-      ctx.strokeRect(cell.c * 48, cell.r * 48, 48, 48);
-    });
-    // Occasional glowing dots
-    cells.forEach(cell => {
-      const a = (Math.sin(animT * 1.7 + cell.phase * 2.3) + 1) / 2;
-      if (a > 0.92) {
-        ctx.beginPath();
-        ctx.arc(cell.c * 48 + 24, cell.r * 48 + 24, 1.5, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(219, 39, 99, ${(a - 0.92) * 14})`;
-        ctx.fill();
-      }
-    });
-    requestAnimationFrame(drawGrid);
-  }
-
-  resize();
-  drawGrid();
-  window.addEventListener('resize', resize);
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 </script>
+<script src="chat-widget.js"></script>
 </body>
 </html>

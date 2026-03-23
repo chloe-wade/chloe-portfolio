@@ -4,261 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — Chloe Wade</title>
-  <meta name="description" content="Get in touch with Chloe Wade — marketing strategist, analyst, and designer based in New York City." />
+  <meta name="description" content="Get in touch with Chloe Wade. Marketing strategist based in New York City." />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* ── Page layout ──────────────────────────────────────────── */
-    .contact-page {
-      min-height: 100vh;
-      display: grid;
-      grid-template-rows: 1fr auto;
-    }
-    .contact-main {
-      padding: calc(var(--nav-h) + 5rem) clamp(1.5rem, 8vw, 7rem) 4rem;
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 5rem;
-      align-items: start;
-      max-width: 1200px;
-      margin: 0 auto;
-      width: 100%;
-    }
+    .contact-main { padding: calc(var(--nav-h) + 5rem) clamp(1.5rem, 8vw, 7rem) 4rem; display: grid; grid-template-columns: 1fr 420px; gap: 5rem; align-items: start; max-width: 1200px; margin: 0 auto; width: 100%; }
+    .contact-headline { margin-bottom: 1rem; }
+    .contact-headline em { color: var(--accent); font-style: italic; }
+    .contact-desc { font-size: 1.08rem; color: var(--text-muted); line-height: 1.75; max-width: 420px; margin-bottom: 2.5rem; }
 
-    /* ── Left column ──────────────────────────────────────────── */
-    .contact-headline {
-      margin-bottom: 1rem;
-    }
-    .contact-headline em {
-      color: var(--accent);
-      font-style: italic;
-    }
-    .contact-desc {
-      font-size: 1.08rem;
-      color: var(--text-muted);
-      line-height: 1.75;
-      max-width: 420px;
-      margin-bottom: 2.5rem;
-    }
+    .contact-link-item { display: flex; flex-direction: column; gap: 0.2rem; padding: 1.1rem 1.4rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1rem; }
+    .contact-link-item:hover { border-color: var(--black); box-shadow: var(--shadow); }
+    .contact-link-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-subtle); }
+    .contact-link-value { font-size: 0.95rem; font-weight: 700; color: var(--black); }
 
-    /* Contact links */
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-bottom: 2.5rem;
-    }
-    .contact-link-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1.1rem 1.4rem;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      text-decoration: none;
-      transition: all var(--transition);
-      color: var(--text);
-    }
-    .contact-link-item:hover {
-      border-color: rgba(219,39,99,0.35);
-      transform: translateX(4px);
-      box-shadow: -3px 0 0 0 var(--accent);
-    }
-    .contact-link-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 9px;
-      background: var(--accent-glow);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-    .contact-link-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-subtle);
-    }
-    .contact-link-value {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--white);
-      margin-top: 0.1rem;
-    }
+    .form-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2.5rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.1rem; }
+    .form-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); }
+    .form-input, .form-textarea { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.8rem 1rem; font-size: 0.93rem; font-family: var(--sans); color: var(--text); outline: none; width: 100%; }
+    .form-input:focus, .form-textarea:focus { border-color: var(--accent); }
+    .form-textarea { resize: vertical; min-height: 120px; }
 
-    /* Resume button */
-    .resume-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 1rem 2rem;
-      background: transparent;
-      border: 2px solid var(--accent);
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--accent);
-      cursor: pointer;
-      text-decoration: none;
-      transition: all var(--transition);
-      font-family: var(--sans);
-    }
-    .resume-btn:hover {
-      background: var(--accent);
-      color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 24px rgba(219,39,99,0.35);
-    }
-    .resume-btn svg {
-      width: 16px;
-      height: 16px;
-      flex-shrink: 0;
-    }
+    .btn-submit { background: var(--black); color: var(--white); border: none; padding: 1rem; width: 100%; border-radius: 999px; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+    .btn-submit:hover { background: var(--accent); transform: translateY(-2px); }
 
-    /* ── Right column — Contact form ──────────────────────────── */
-    .contact-form-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 2.5rem;
-      position: sticky;
-      top: calc(var(--nav-h) + 1.5rem);
-    }
-    .form-title {
-      font-family: var(--serif);
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 0.4rem;
-    }
-    .form-sub {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 1.75rem;
-    }
+    .availability { color: var(--accent); font-weight: 700; font-size: 0.85rem; margin-bottom: 1.5rem; }
 
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-      margin-bottom: 1.1rem;
-    }
-    .form-label {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-    .form-input,
-    .form-textarea {
-      background: var(--bg-card2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 0.8rem 1rem;
-      font-size: 0.93rem;
-      font-family: var(--sans);
-      color: var(--text);
-      outline: none;
-      width: 100%;
-      transition: border-color var(--transition), box-shadow var(--transition);
-    }
-    .form-input:focus,
-    .form-textarea:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px var(--accent-glow);
-    }
-    .form-input::placeholder,
-    .form-textarea::placeholder { color: var(--text-subtle); }
-    .form-textarea {
-      resize: vertical;
-      min-height: 120px;
-      line-height: 1.6;
-    }
-
-    .form-submit {
-      width: 100%;
-      padding: 0.95rem;
-      background: var(--accent);
-      border: none;
-      border-radius: 999px;
-      font-family: var(--sans);
-      font-size: 0.93rem;
-      font-weight: 600;
-      color: #fff;
-      cursor: pointer;
-      transition: all var(--transition);
-      margin-top: 0.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-    .form-submit:hover {
-      background: var(--accent-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(219,39,99,0.4);
-    }
-
-    /* Success state */
-    .form-success {
-      display: none;
-      text-align: center;
-      padding: 2rem 0;
-    }
-    .form-success-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    .form-success h3 {
-      font-size: 1.2rem;
-      color: var(--white);
-      margin-bottom: 0.5rem;
-    }
-    .form-success p {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-    }
-
-    /* ── Availability chip ────────────────────────────────────── */
-    .availability-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(34,197,94,0.1);
-      border: 1px solid rgba(34,197,94,0.25);
-      border-radius: 999px;
-      padding: 0.4rem 1rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.07em;
-      color: #4ade80;
-      margin-bottom: 1.75rem;
-    }
-    .avail-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #22c55e;
-      animation: avail-pulse 2s ease infinite;
-    }
-    @keyframes avail-pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-
-    /* ── Responsive ───────────────────────────────────────────── */
-    @media (max-width: 900px) {
-      .contact-main {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        padding-top: calc(var(--nav-h) + 3rem);
-      }
-      .contact-form-card { position: relative; top: 0; }
-    }
+    @media (max-width: 900px) { .contact-main { grid-template-columns: 1fr; gap: 3rem; } }
   </style>
 </head>
 <body>
@@ -270,7 +41,6 @@
     <li><a href="about.html">About</a></li>
     <li><a href="skills.html">Skills</a></li>
     <li><a href="experience.html">Experience</a></li>
-    <li><a href="chat.html">Ask Chloe</a></li>
     <li><a href="contact.html" class="active">Contact</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -282,97 +52,56 @@
   <a href="about.html">About</a>
   <a href="skills.html">Skills</a>
   <a href="experience.html">Experience</a>
-  <a href="chat.html">Ask Chloe</a>
   <a href="contact.html" class="active">Contact</a>
 </div>
 
-<div class="contact-page page-content">
+<div class="page-content">
   <div class="contact-main">
-
-    <!-- ── Left: Info ──────────────────────────────────────────── -->
     <div>
       <div class="section-label fade-up">Contact</div>
-      <h1 class="contact-headline fade-up delay-1">
-        Let's build<br>something <em>smart.</em>
-      </h1>
-      <p class="contact-desc fade-up delay-2">
-        Whether you're hiring, collaborating, or just curious — I'd love to hear from you.
-        I'm based in New York City and open to growth marketing, digital analytics, and brand roles where both brains need to show up.
+      <h1 class="contact-headline fade-up delay-1">Let's build<br>something <em>smart.</em></h1>
+      <p class="contact-desc fade-up delay-1">
+        Whether you are hiring or collaborating, I would love to hear from you. I am based in New York City and open to new roles in marketing and digital analytics.
       </p>
 
-      <div class="availability-chip fade-up delay-2">
-        <span class="avail-dot"></span>
-        Open to opportunities · May 2026
-      </div>
+      <div class="availability fade-up delay-2">Available for projects and full time roles. May 2026.</div>
 
-      <div class="contact-links fade-up delay-3">
-        <a href="mailto:chloevwade@gmail.com" class="contact-link-item" id="emailLink">
-          <div class="contact-link-icon">✉️</div>
-          <div>
-            <div class="contact-link-label">Email</div>
-            <div class="contact-link-value">chloevwade@gmail.com</div>
-          </div>
+      <div class="fade-up delay-2">
+        <a href="mailto:chloevwade@gmail.com" class="contact-link-item">
+          <span class="contact-link-label">Email</span>
+          <span class="contact-link-value">chloevwade@gmail.com</span>
         </a>
-        <a href="#" class="contact-link-item" target="_blank" id="linkedinLink">
-          <div class="contact-link-icon">💼</div>
-          <div>
-            <div class="contact-link-label">LinkedIn</div>
-            <div class="contact-link-value">linkedin.com/in/chloewade</div>
-          </div>
-        </a>
-        <div class="contact-link-item" style="cursor:default;">
-          <div class="contact-link-icon">📍</div>
-          <div>
-            <div class="contact-link-label">Location</div>
-            <div class="contact-link-value">New York City, NY</div>
-          </div>
+        <div class="contact-link-item">
+          <span class="contact-link-label">Location</span>
+          <span class="contact-link-value">New York City, NY</span>
         </div>
       </div>
-
-      <a href="#" class="resume-btn fade-up delay-4" id="resumeBtn" download>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-          <polyline points="7 10 12 15 17 10"/>
-          <line x1="12" y1="15" x2="12" y2="3"/>
-        </svg>
-        Download Resume
-      </a>
+      
+      <div style="margin-top:2rem;">
+        <a href="#" class="btn btn-outline" style="border-width:2px;">Download Resume</a>
+      </div>
     </div>
 
-    <!-- ── Right: Contact Form ─────────────────────────────────── -->
-    <div class="contact-form-card fade-up delay-2">
-      <div class="form-title">Send a message</div>
-      <p class="form-sub">I'll get back to you within 48 hours.</p>
-
-      <form id="contactForm" novalidate>
+    <div class="form-card fade-up delay-1">
+      <h3 style="margin-bottom:0.5rem; font-family:var(--serif);">Send a Message</h3>
+      <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1.5rem;">I will get back to you within 48 hours for serious inquiries.</p>
+      
+      <form id="contactForm">
         <div class="form-group">
-          <label class="form-label" for="formName">Name</label>
-          <input class="form-input" type="text" id="formName" placeholder="Your full name" required />
+          <label class="form-label">Name</label>
+          <input class="form-input" type="text" placeholder="Your Name" required />
         </div>
         <div class="form-group">
-          <label class="form-label" for="formEmail">Email</label>
-          <input class="form-input" type="email" id="formEmail" placeholder="you@example.com" required />
+          <label class="form-label">Email</label>
+          <input class="form-input" type="email" placeholder="Your Email" required />
         </div>
         <div class="form-group">
-          <label class="form-label" for="formMessage">Message</label>
-          <textarea class="form-textarea" id="formMessage" placeholder="Tell me a bit about what you're working on…" required></textarea>
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" placeholder="Tell me about your project" required></textarea>
         </div>
-        <button type="submit" class="form-submit" id="formSubmit">
-          <span>Send Message</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="22" y1="2" x2="11" y2="13"/>
-            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-          </svg>
-        </button>
+        <button type="submit" class="btn-submit">Submit Inquiry</button>
       </form>
-
-      <div class="form-success" id="formSuccess">
-        <div class="form-success-icon">✅</div>
-        <h3>Message sent!</h3>
-        <p>Thanks for reaching out. Chloe will be in touch soon.</p>
-      </div>
     </div>
-
   </div>
 </div>
 
@@ -381,15 +110,14 @@
     <div class="footer-logo">Chloe<span>.</span>Wade</div>
     <div class="footer-links">
       <a href="mailto:chloevwade@gmail.com">chloevwade@gmail.com</a>
-      <a href="#" target="_blank">LinkedIn</a>
+      <a href="#">LinkedIn</a>
       <a href="contact.html">Contact</a>
     </div>
   </div>
-  <p class="footer-copy">© 2026 Chloe Wade · New York City</p>
+  <p class="footer-copy">© 2026 Chloe Wade. New York City</p>
 </footer>
 
 <script>
-  // ── Nav toggle ────────────────────────────────────────────────
   const toggle = document.getElementById('navToggle');
   const mobile = document.getElementById('navMobile');
   toggle.addEventListener('click', () => {
@@ -397,30 +125,11 @@
     mobile.classList.toggle('open');
   });
 
-  // ── Scroll animations ─────────────────────────────────────────
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
-
-  // ── Contact form — mailto fallback ────────────────────────────
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const name    = document.getElementById('formName').value.trim();
-    const email   = document.getElementById('formEmail').value.trim();
-    const message = document.getElementById('formMessage').value.trim();
-
-    if (!name || !email || !message) return;
-
-    // Build a mailto link as a graceful fallback (no backend needed)
-    const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
-    const body    = encodeURIComponent(`Hi Chloe,\n\n${message}\n\nBest,\n${name}\n${email}`);
-    window.location.href = `mailto:chloevwade@gmail.com?subject=${subject}&body=${body}`;
-
-    // Show success state
-    document.getElementById('contactForm').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
-  });
 </script>
+<script src="chat-widget.js"></script>
 </body>
 </html>
