@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Chloe Wade</title>
+  <meta name="description" content="Learn about Chloe Wade — a marketing strategist trained at Parsons School of Design, currently pursuing an MSc in Digital Marketing &amp; Analytics at TBS Education." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── About Hero ───────────────────────────────────────────── */
+    .about-hero {
+      padding: calc(var(--nav-h) + 4rem) clamp(1.5rem, 6vw, 5rem) 1rem;
+    }
+    .about-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 4rem;
+      align-items: start;
+    }
+    .about-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent-glow);
+      border: 1px solid rgba(219,39,99,0.25);
+      border-radius: 999px;
+      padding: 0.4rem 1rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    .about-intro-text {
+      font-size: 1.12rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+    .about-intro-text strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    /* ── Avatar Card ──────────────────────────────────────────── */
+    .avatar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      text-align: center;
+      position: sticky;
+      top: calc(var(--nav-h) + 1.5rem);
+    }
+    .avatar-wrap {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 1.5rem;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 0 6px var(--accent-glow);
+    }
+    .avatar-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .avatar-name {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .avatar-title {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+      letter-spacing: 0.04em;
+    }
+    .avatar-location {
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* Languages inside avatar card */
+    .lang-row {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    .lang-chip {
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    /* ── Education Timeline ───────────────────────────────────── */
+    .edu-section { padding-left: clamp(1.5rem, 6vw, 5rem); padding-right: clamp(1.5rem, 6vw, 5rem); }
+    .edu-timeline { position: relative; padding-left: 2rem; }
+    .edu-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+    }
+    .edu-item {
+      position: relative;
+      padding: 0 0 2.5rem 2rem;
+    }
+    .edu-item::before {
+      content: '';
+      position: absolute;
+      left: -5px; top: 6px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-glow);
+    }
+    .edu-year {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+    .edu-school {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .edu-degree {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+    .edu-detail {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-subtle);
+      font-style: italic;
+    }
+
+    /* ── Personal Brand Statement ─────────────────────────────── */
+    .brand-statement {
+      background: var(--bg-card);
+      border: 1px solid rgba(219,39,99,0.2);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      padding: 2.5rem 3rem;
+      margin: 0 clamp(1.5rem, 6vw, 5rem);
+      position: relative;
+      overflow: hidden;
+    }
+    .brand-statement::before {
+      content: '"';
+      position: absolute;
+      top: -0.5rem;
+      left: 1.5rem;
+      font-family: var(--serif);
+      font-size: 8rem;
+      color: var(--accent-glow);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .brand-statement p {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      color: var(--white);
+      line-height: 1.6;
+      font-style: italic;
+      position: relative;
+      z-index: 1;
+    }
+    .brand-cta {
+      margin-top: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Responsive ───────────────────────────────────────────── */
+    @media (max-width: 860px) {
+      .about-hero-grid { grid-template-columns: 1fr; }
+      .avatar-card { position: relative; top: 0; }
+      .brand-statement { margin: 0 1.25rem; padding: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Chloe<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="chat.html">Ask Chloe</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="index.html">Home</a>
+  <a href="about.html" class="active">About</a>
+  <a href="skills.html">Skills</a>
+  <a href="experience.html">Experience</a>
+  <a href="chat.html">Ask Chloe</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="page-content">
+
+  <!-- ── About Hero ─────────────────────────────────────────── -->
+  <section class="about-hero">
+    <div class="about-hero-grid">
+      <div>
+        <div class="about-badge fade-up">✦ The Hybrid Profile</div>
+        <h1 class="fade-up delay-1">The analyst<br>with an <em style="color:var(--accent); font-style:italic;">eye for design.</em></h1>
+        <p class="about-intro-text fade-up delay-2">
+          Chloe Wade is a rare kind of marketing professional. <strong>Trained as a fashion designer at Parsons School of Design</strong>, she crossed disciplines to become a marketer and analyst who doesn't just run campaigns — she builds systems, reads data, and designs the story.
+        </p>
+        <p class="about-intro-text fade-up delay-3">
+          She doesn't believe the creative brain and the analytical brain are opposites. <strong>She's proof they're not.</strong> At every role, she's brought both to the table: building WIP dashboards alongside lookbooks, optimizing ad spend alongside color stories, leading teams alongside leading briefs.
+        </p>
+        <p class="about-intro-text fade-up delay-4">
+          Currently completing her <strong>MSc in Digital Marketing & Analytics at TBS Education</strong> in Barcelona (May 2026), she's deepening her quantitative skills while never losing the design intuition that makes her campaigns feel as good as they perform.
+        </p>
+      </div>
+
+      <div class="fade-up delay-2">
+        <div class="avatar-card">
+          <div class="avatar-wrap">
+            <img src="chloe_avatar.png" alt="Chloe Wade portrait" />
+          </div>
+          <div class="avatar-name">Chloe Wade</div>
+          <div class="avatar-title">Marketing Strategist &amp; Analyst</div>
+          <div class="avatar-location">📍 New York City</div>
+          <div class="lang-row">
+            <span class="lang-chip">🇺🇸 English — Native</span>
+            <span class="lang-chip">🇪🇸 Spanish — B1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Education Timeline ─────────────────────────────────── -->
+  <section class="edu-section">
+    <div class="section-label">Education</div>
+    <h2 class="section-title fade-up">Where the foundation was built</h2>
+    <div class="divider"></div>
+
+    <div class="edu-timeline">
+      <div class="edu-item fade-up">
+        <div class="edu-year">2024 – May 2026</div>
+        <div class="edu-school">TBS Education · Barcelona</div>
+        <div class="edu-degree">MSc in Digital Marketing &amp; Analytics</div>
+        <div class="edu-detail">Deepening expertise in data-driven marketing strategy, analytics tools, and digital performance — with a European market lens.</div>
+      </div>
+      <div class="edu-item fade-up delay-1">
+        <div class="edu-year">2019 – 2023</div>
+        <div class="edu-school">Parsons School of Design · New York</div>
+        <div class="edu-degree">BFA in Fashion Design — Honors</div>
+        <div class="edu-detail">Graduated with honors. Developed a rigorous creative practice, systems thinking, and the ability to translate abstract ideas into tangible, resonant design.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Brand Statement ────────────────────────────────────── -->
+  <section style="padding: 2rem 0 5rem;">
+    <div class="brand-statement fade-up">
+      <p>
+        I build campaigns that don't just look good — they perform. I design systems that don't just track metrics — they tell stories. And I lead teams that don't just execute — they understand the why.
+      </p>
+      <div class="brand-cta">
+        <a href="chat.html" class="btn btn-primary">Ask Chloe anything →</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Chloe<span>.</span>Wade</div>
+    <div class="footer-links">
+      <a href="mailto:chloevwade@gmail.com">chloevwade@gmail.com</a>
+      <a href="#" target="_blank">LinkedIn</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <p class="footer-copy">© 2026 Chloe Wade · New York City</p>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const mobile = document.getElementById('navMobile');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    mobile.classList.toggle('open');
+  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

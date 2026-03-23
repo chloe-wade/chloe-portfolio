@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experience — Chloe Wade</title>
+  <meta name="description" content="Chloe Wade's professional experience spanning fashion, e-commerce, product development, and retail leadership." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Page Hero ────────────────────────────────────────────── */
+    .page-hero {
+      padding: calc(var(--nav-h) + 4rem) clamp(1.5rem, 6vw, 5rem) 2rem;
+    }
+
+    /* ── Timeline ─────────────────────────────────────────────── */
+    .timeline {
+      padding: 0 clamp(1.5rem, 6vw, 5rem) 5rem;
+      position: relative;
+    }
+    .timeline-line {
+      position: absolute;
+      left: clamp(1.5rem, 6vw, 5rem);
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent) 0%, rgba(219,39,99,0.15) 80%, transparent 100%);
+      margin-left: 22px;
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 0 2rem;
+      margin-bottom: 3.5rem;
+      position: relative;
+    }
+
+    /* Node */
+    .tl-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      padding-top: 4px;
+    }
+    .tl-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 0 5px var(--accent-glow);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .tl-dot.current {
+      background: var(--accent);
+      animation: pulse-current 2s ease infinite;
+    }
+    @keyframes pulse-current {
+      0%, 100% { box-shadow: 0 0 0 5px var(--accent-glow); }
+      50%       { box-shadow: 0 0 0 9px rgba(219,39,99,0.08); }
+    }
+
+    /* Card */
+    .tl-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem 2.25rem;
+      transition: all var(--transition);
+    }
+    .tl-card:hover {
+      border-color: rgba(219,39,99,0.3);
+      transform: translateX(4px);
+      box-shadow: -4px 0 0 0 var(--accent), 0 12px 40px rgba(0,0,0,0.35);
+    }
+
+    .tl-dates {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .tl-role {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+    }
+    .tl-company {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .tl-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .tl-bullets li {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .tl-bullets li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    /* Highlighted metric */
+    .metric {
+      display: inline;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* Tags row */
+    .tl-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+    .tl-tag {
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-subtle);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Responsive ───────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .timeline-line { left: 1.25rem; margin-left: 4px; }
+      .timeline-item { grid-template-columns: 28px 1fr; gap: 0 1rem; }
+      .tl-card { padding: 1.5rem; }
+      .tl-card:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Chloe<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="experience.html" class="active">Experience</a></li>
+    <li><a href="chat.html">Ask Chloe</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="skills.html">Skills</a>
+  <a href="experience.html" class="active">Experience</a>
+  <a href="chat.html">Ask Chloe</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="page-content">
+
+  <!-- ── Page Hero ──────────────────────────────────────────── -->
+  <section class="page-hero">
+    <div class="section-label">Experience</div>
+    <h1 class="fade-up">Work that <em style="color:var(--accent);">moved the numbers.</em></h1>
+    <p class="section-sub fade-up delay-1">
+      From flagship fashion houses to scrappy e-commerce startups — always the person who could design the campaign and then pull the data to prove it worked.
+    </p>
+    <div class="divider"></div>
+  </section>
+
+  <!-- ── Timeline ───────────────────────────────────────────── -->
+  <div class="timeline">
+    <div class="timeline-line"></div>
+
+    <!-- H.I.S International -->
+    <div class="timeline-item fade-up">
+      <div class="tl-node"><div class="tl-dot current"></div></div>
+      <div class="tl-card">
+        <div class="tl-dates">Nov 2023 – Dec 2024</div>
+        <div class="tl-role">Associate Product Development Manager</div>
+        <div class="tl-company">H.I.S International</div>
+        <ul class="tl-bullets">
+          <li>
+            Orchestrated cross-functional product launches from concept to retail floor, achieving a
+            <span class="metric">98% on-time delivery rate</span> across multiple seasonal collections — leveraging WIP dashboard systems to surface blockers and keep 40+ cross-team stakeholders aligned in real time.
+          </li>
+          <li>
+            Designed and maintained data-tracking tools that consolidated supplier, production, and timeline data into a single source of truth, cutting cross-department communication friction and improving forecast accuracy by a measurable margin quarter-over-quarter.
+          </li>
+        </ul>
+        <div class="tl-tags">
+          <span class="tl-tag">Product Development</span>
+          <span class="tl-tag">WIP Dashboards</span>
+          <span class="tl-tag">Cross-Team Leadership</span>
+          <span class="tl-tag">Supply Chain</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Meg by Meghan Kinney -->
+    <div class="timeline-item fade-up delay-1">
+      <div class="tl-node"><div class="tl-dot"></div></div>
+      <div class="tl-card">
+        <div class="tl-dates">Sep 2021 – Jun 2023</div>
+        <div class="tl-role">Marketing &amp; E-Commerce Manager / Assistant Designer</div>
+        <div class="tl-company">Meg by Meghan Kinney</div>
+        <ul class="tl-bullets">
+          <li>
+            Drove a <span class="metric">20% increase in ROAS</span> through targeted Google Ads restructuring, audience segmentation, and continuous creative testing — resulting in measurably lower CAC and stronger revenue-per-click across DTC channels.
+          </li>
+          <li>
+            Owned end-to-end e-commerce marketing: email campaigns, social content, site merchandising, and seasonal lookbook design — functioning simultaneously as brand designer and performance marketer, eliminating the agency overhead entirely.
+          </li>
+        </ul>
+        <div class="tl-tags">
+          <span class="tl-tag">Google Ads</span>
+          <span class="tl-tag">ROAS Optimization</span>
+          <span class="tl-tag">E-Commerce</span>
+          <span class="tl-tag">Email Marketing</span>
+          <span class="tl-tag">Brand Design</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proenza Schouler -->
+    <div class="timeline-item fade-up delay-2">
+      <div class="tl-node"><div class="tl-dot"></div></div>
+      <div class="tl-card">
+        <div class="tl-dates">Jan – May 2022</div>
+        <div class="tl-role">Design Intern</div>
+        <div class="tl-company">Proenza Schouler</div>
+        <ul class="tl-bullets">
+          <li>
+            Contributed to seasonal design development at one of New York's most prestigious luxury fashion houses — gaining exposure to the full creative pipeline from concept research and mood-boarding to sample development and presentation prep.
+          </li>
+          <li>
+            Developed a sharpened eye for brand integrity and creative positioning under pressure, translating the rigors of luxury design standards into a lasting framework for visual excellence across every subsequent marketing role.
+          </li>
+        </ul>
+        <div class="tl-tags">
+          <span class="tl-tag">Luxury Fashion</span>
+          <span class="tl-tag">Creative Development</span>
+          <span class="tl-tag">Brand Integrity</span>
+          <span class="tl-tag">Design Research</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Target -->
+    <div class="timeline-item fade-up delay-3">
+      <div class="tl-node"><div class="tl-dot"></div></div>
+      <div class="tl-card">
+        <div class="tl-dates">Oct 2016 – Sep 2021</div>
+        <div class="tl-role">Customer Service &amp; Cash Office Manager</div>
+        <div class="tl-company">Target</div>
+        <ul class="tl-bullets">
+          <li>
+            Led a front-end team of <span class="metric">40+ members</span> — managing scheduling, performance reviews, training programs, and daily operations across high-volume store environments, consistently meeting NPS and customer satisfaction benchmarks.
+          </li>
+          <li>
+            Oversaw cash office operations and financial reconciliation for a high-traffic retail location, building the discipline, process rigor, and stakeholder management skills that underpin every analytical and operational role since.
+          </li>
+        </ul>
+        <div class="tl-tags">
+          <span class="tl-tag">Team Leadership</span>
+          <span class="tl-tag">Operations</span>
+          <span class="tl-tag">Financial Reconciliation</span>
+          <span class="tl-tag">Customer Experience</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end timeline -->
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Chloe<span>.</span>Wade</div>
+    <div class="footer-links">
+      <a href="mailto:chloevwade@gmail.com">chloevwade@gmail.com</a>
+      <a href="#" target="_blank">LinkedIn</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <p class="footer-copy">© 2026 Chloe Wade · New York City</p>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const mobile = document.getElementById('navMobile');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    mobile.classList.toggle('open');
+  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

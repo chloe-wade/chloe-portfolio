@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills — Chloe Wade</title>
+  <meta name="description" content="Chloe Wade's analytical and creative skill set — from Google Analytics and SQL to Adobe Creative Suite and brand strategy." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Page Hero ────────────────────────────────────────────── */
+    .page-hero {
+      padding: calc(var(--nav-h) + 4rem) clamp(1.5rem, 6vw, 5rem) 2rem;
+    }
+
+    /* ── Skills Split Layout ──────────────────────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .skills-col {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+    }
+    .skills-col-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+    .skills-col-icon {
+      width: 50px; height: 50px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .icon-analytical { background: rgba(219,39,99,0.12); }
+    .icon-creative   { background: rgba(99,102,241,0.12); }
+
+    .skills-col-title {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .skills-col-subtitle {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    /* ── Skill Tags ───────────────────────────────────────────── */
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+    .skill-tag {
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: default;
+      transition: all var(--transition);
+      user-select: none;
+    }
+    .skill-tag:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-glow);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(219,39,99,0.2);
+    }
+
+    /* Progress bars for featured skills */
+    .skill-bars {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .skill-bar-item { }
+    .skill-bar-top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.3rem;
+    }
+    .skill-bar-name { font-size: 0.82rem; font-weight: 500; color: var(--text); }
+    .skill-bar-pct  { font-size: 0.78rem; color: var(--accent); font-weight: 600; }
+    .skill-bar-track {
+      height: 5px;
+      background: var(--border);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .skill-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), #ff6b9d);
+      border-radius: 999px;
+      width: 0;
+      transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* ── Certifications ───────────────────────────────────────── */
+    .cert-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .cert-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      flex: 1 1 calc(50% - 0.5rem);
+      min-width: 220px;
+      transition: all var(--transition);
+    }
+    .cert-badge:hover {
+      border-color: rgba(219,39,99,0.3);
+      transform: translateY(-2px);
+    }
+    .cert-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: var(--accent-glow);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .cert-name {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.3;
+    }
+    .cert-issuer {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    @media (max-width: 860px) {
+      .skills-grid { grid-template-columns: 1fr; }
+      .cert-badge { flex: 1 1 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Chloe<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html" class="active">Skills</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="chat.html">Ask Chloe</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="skills.html" class="active">Skills</a>
+  <a href="experience.html">Experience</a>
+  <a href="chat.html">Ask Chloe</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="page-content">
+
+  <!-- ── Hero ───────────────────────────────────────────────── -->
+  <section class="page-hero">
+    <div class="section-label">Skills & Expertise</div>
+    <h1 class="fade-up">Both brains.<br><em style="color:var(--accent);">Fully deployed.</em></h1>
+    <p class="section-sub fade-up delay-1">The complete analytical and creative toolkit — built across fashion, e-commerce, product development, and digital marketing.</p>
+    <div class="divider"></div>
+  </section>
+
+  <!-- ── Skills Split ───────────────────────────────────────── -->
+  <section style="padding-top: 0;">
+    <div class="skills-grid">
+
+      <!-- Analytical -->
+      <div class="skills-col fade-up">
+        <div class="skills-col-header">
+          <div class="skills-col-icon icon-analytical">📊</div>
+          <div>
+            <div class="skills-col-title">Analytical Brain</div>
+            <div class="skills-col-subtitle">Data-driven. Performance-obsessed. Results-first.</div>
+          </div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Google Analytics</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Tableau</span>
+          <span class="skill-tag">Power BI</span>
+          <span class="skill-tag">Looker Studio</span>
+          <span class="skill-tag">A/B Testing</span>
+          <span class="skill-tag">KPI Frameworks</span>
+          <span class="skill-tag">HubSpot</span>
+          <span class="skill-tag">Google Ads</span>
+          <span class="skill-tag">SEMRush</span>
+          <span class="skill-tag">Marketing Funnel Analysis</span>
+        </div>
+        <div class="skill-bars">
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span class="skill-bar-name">Analytics & Reporting</span><span class="skill-bar-pct">92%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="92"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span class="skill-bar-name">Paid Media (Google Ads)</span><span class="skill-bar-pct">87%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="87"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span class="skill-bar-name">SQL & Data Science</span><span class="skill-bar-pct">78%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="78"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Creative -->
+      <div class="skills-col fade-up delay-1">
+        <div class="skills-col-header">
+          <div class="skills-col-icon icon-creative">🎨</div>
+          <div>
+            <div class="skills-col-title">Creative Core</div>
+            <div class="skills-col-subtitle">Design-trained. Brand-fluent. Story-first.</div>
+          </div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Adobe Creative Suite</span>
+          <span class="skill-tag">Canva</span>
+          <span class="skill-tag">Email Marketing</span>
+          <span class="skill-tag">Brand Identity</span>
+          <span class="skill-tag">Content Strategy</span>
+          <span class="skill-tag">UX-Informed Design</span>
+          <span class="skill-tag">Social Media</span>
+          <span class="skill-tag">Visual Storytelling</span>
+        </div>
+        <div class="skill-bars">
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span class="skill-bar-name">Brand Design & Creative</span><span class="skill-bar-pct">95%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span class="skill-bar-name">Content & Social Strategy</span><span class="skill-bar-pct">90%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span class="skill-bar-name">Email Marketing</span><span class="skill-bar-pct">88%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Certifications ─────────────────────────────────────── -->
+  <section>
+    <div class="section-label">Certifications</div>
+    <h2 class="section-title fade-up">Formally verified</h2>
+    <div class="divider"></div>
+    <div class="cert-grid">
+      <div class="cert-badge fade-up">
+        <div class="cert-icon">🏆</div>
+        <div>
+          <div class="cert-name">HubSpot Marketing Hub</div>
+          <div class="cert-issuer">HubSpot Academy</div>
+        </div>
+      </div>
+      <div class="cert-badge fade-up delay-1">
+        <div class="cert-icon">📈</div>
+        <div>
+          <div class="cert-name">Google Analytics Certification</div>
+          <div class="cert-issuer">Google</div>
+        </div>
+      </div>
+      <div class="cert-badge fade-up delay-2">
+        <div class="cert-icon">🎯</div>
+        <div>
+          <div class="cert-name">Google Ads Search & Display</div>
+          <div class="cert-issuer">Google</div>
+        </div>
+      </div>
+      <div class="cert-badge fade-up delay-3">
+        <div class="cert-icon">💻</div>
+        <div>
+          <div class="cert-name">SQL for Data Science</div>
+          <div class="cert-issuer">Coursera / UC Davis</div>
+        </div>
+      </div>
+      <div class="cert-badge fade-up delay-4">
+        <div class="cert-icon">📊</div>
+        <div>
+          <div class="cert-name">Data Visualization</div>
+          <div class="cert-issuer">Excel & IBM Cognos</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Chloe<span>.</span>Wade</div>
+    <div class="footer-links">
+      <a href="mailto:chloevwade@gmail.com">chloevwade@gmail.com</a>
+      <a href="#" target="_blank">LinkedIn</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <p class="footer-copy">© 2026 Chloe Wade · New York City</p>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const mobile = document.getElementById('navMobile');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    mobile.classList.toggle('open');
+  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Animate bars on scroll
+  const barObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const fills = e.target.querySelectorAll('.skill-bar-fill');
+        fills.forEach(fill => {
+          const w = fill.dataset.width;
+          fill.style.width = w + '%';
+        });
+        barObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.skills-col').forEach(col => barObs.observe(col));
+</script>
+</body>
+</html>
