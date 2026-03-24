@@ -638,6 +638,11 @@
               <dt>Tools</dt><dd>Hotjar, Google Analytics, Canva</dd>
             </dl>
           </div>
+          <div class="skill-tags">
+            <span class="skill-tag">#E-commerce</span>
+            <span class="skill-tag">#Hotjar</span>
+            <span class="skill-tag">#UX</span>
+          </div>
           <div class="design-decision">
             <span class="decision-label">Design decision</span>
             <p class="decision-text">"I moved the primary CTA above the fold after heatmap data showed users weren't scrolling past the hero image."</p>
@@ -662,6 +667,11 @@
               <dt>Tools</dt><dd>Google Ads, Adobe Illustrator</dd>
             </dl>
           </div>
+          <div class="skill-tags">
+            <span class="skill-tag">#GoogleAds</span>
+            <span class="skill-tag">#ROAS</span>
+            <span class="skill-tag">#AdobeSuite</span>
+          </div>
           <div class="design-decision">
             <span class="decision-label">Design decision</span>
             <p class="decision-text">"I aligned ad headline copy directly with the landing page H1 to improve Quality Score and reduce cost per click."</p>
@@ -685,6 +695,11 @@
               <dt>Brief</dt><dd>Re-engage lapsed customers with a 3-part drip sequence</dd>
               <dt>Tools</dt><dd>Email platform, Canva, Adobe</dd>
             </dl>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">#EmailMarketing</span>
+            <span class="skill-tag">#Segmentation</span>
+            <span class="skill-tag">#AdobeSuite</span>
           </div>
           <div class="design-decision">
             <span class="decision-label">Design decision</span>
@@ -723,6 +738,13 @@
 
 <script>
   // Mobile Nav Toggle
+  
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) nav.classList.add('sticky');
+    else nav.classList.remove('sticky');
+  });
+
   const toggle = document.getElementById('navToggle');
   const mobile = document.getElementById('navMobile');
   toggle.addEventListener('click', () => {

@@ -65,41 +65,65 @@
   <div class="timeline">
     <div class="timeline-line"></div>
 
+    <!-- H.I.S International -->
     <div class="timeline-item fade-up">
       <div class="tl-node" style="padding-top:4px;"><div class="tl-dot"></div></div>
       <div class="tl-card">
-        <div class="tl-dates">Nov 2023 / Dec 2024</div>
+        <div class="tl-dates">Nov 2023 - Dec 2024</div>
         <div class="tl-role">Associate Product Development Manager</div>
         <div class="tl-company">H.I.S International</div>
         <ul class="tl-bullets">
-          <li>I led cross-functional product launches from concept to retail. This resulted in a <span class="metric">98% on-time delivery rate</span> across multiple seasonal collections.</li>
-          <li>I built WIP dashboard systems to surface blockers and keep 40 plus cross-team stakeholders aligned in real time.</li>
+          <li>Managed end-to-end execution of licensed apparel programs, coordinating timelines and cross-functional workflows from concept through production.</li>
+          <li>Delivered <span class="metric">98% on-time completion</span> by proactively mitigating supply-chain delays and aligning stakeholders.</li>
+          <li>Built and maintained <span class="metric">WIP dashboards and program tracking tools</span> to improve visibility into development milestones.</li>
+          <li>Analyzed historical costing, vendor performance, and supplier capacity data to support sourcing strategy.</li>
+          <li>Led technical meetings with overseas manufacturing partners, presenting <span class="metric">data-driven recommendations</span> to resolve production challenges.</li>
         </ul>
       </div>
     </div>
 
+    <!-- Meg by Meghan Kinney -->
     <div class="timeline-item fade-up delay-1">
       <div class="tl-node" style="padding-top:4px;"><div class="tl-dot"></div></div>
       <div class="tl-card">
-        <div class="tl-dates">Sep 2021 / Jun 2023</div>
-        <div class="tl-role">Marketing & E-Commerce Manager</div>
+        <div class="tl-dates">Sep 2021 - Jun 2023</div>
+        <div class="tl-role">Marketing & E-Commerce Manager / Assistant Designer</div>
         <div class="tl-company">Meg by Meghan Kinney</div>
         <ul class="tl-bullets">
-          <li>I achieved a <span class="metric">20% increase in ROAS</span> through targeted Google Ads restructuring and continuous creative testing.</li>
-          <li>I managed end to end e-commerce marketing, including email campaigns and site merchandising. This improved revenue per click across DTC channels.</li>
+          <li>Led marketing and e-commerce operations, managing online orders, website updates, and digital marketing campaigns.</li>
+          <li>Monitored <span class="metric">website heatmaps and behavioral analytics (Hotjar/Google Analytics)</span> to identify and resolve UX friction points, improving conversion pathways.</li>
+          <li>Coordinated visual merchandising updates across email and social channels to maintain brand identity.</li>
+          <li>Led Google Ads campaigns, managing budget and keyword optimization to <span class="metric">increase ROAS by 20%</span>.</li>
+          <li>Supported patternmaking, sample development, and PLM updates as an Assistant Designer.</li>
         </ul>
       </div>
     </div>
 
+    <!-- Proenza Schouler -->
     <div class="timeline-item fade-up delay-2">
       <div class="tl-node" style="padding-top:4px;"><div class="tl-dot"></div></div>
       <div class="tl-card">
-        <div class="tl-dates">Jan / May 2022</div>
+        <div class="tl-dates">Design Intern</div>
         <div class="tl-role">Design Intern</div>
         <div class="tl-company">Proenza Schouler</div>
         <ul class="tl-bullets">
-          <li>I contributed to seasonal design development at a luxury fashion house. This involved concept research and sample development.</li>
-          <li>I developed a sharp eye for brand integrity and creative positioning within a high pressure environment.</li>
+          <li>Conducted high-level <span class="metric">trend and market research</span>; supported sample development and fittings in a luxury environment.</li>
+          <li>Prepared samples and visual materials for photoshoots and showroom presentations.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Target -->
+    <div class="timeline-item fade-up delay-3">
+      <div class="tl-node" style="padding-top:4px;"><div class="tl-dot"></div></div>
+      <div class="tl-card">
+        <div class="tl-dates">Oct 2016 - Sep 2021</div>
+        <div class="tl-role">Customer Service & Cash Office Manager</div>
+        <div class="tl-company">Target</div>
+        <ul class="tl-bullets">
+          <li>Supervised and coached a <span class="metric">team of 40+ members</span>, reinforcing accountability and service quality.</li>
+          <li>Managed high-volume cash office operations, ensuring accuracy in deposits and corporate controls.</li>
+          <li>Designed and implemented a <span class="metric">standardized cash office training manual</span>, reducing onboarding time and errors.</li>
         </ul>
       </div>
     </div>
@@ -119,6 +143,12 @@
 </footer>
 
 <script>
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) nav.classList.add('sticky');
+    else nav.classList.remove('sticky');
+  });
+
   const toggle = document.getElementById('navToggle');
   const mobile = document.getElementById('navMobile');
   toggle.addEventListener('click', () => {

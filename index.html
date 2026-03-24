@@ -140,6 +140,8 @@
 
 <div class="page-content">
   <section class="hero">
+    <div class="hero-blob"></div>
+    <div class="hero-shape"></div>
     <div class="hero-content">
       <div class="hero-eyebrow">
         <div style="display:inline-flex; align-items:center; gap:0.5rem; background:var(--bg-card); border:1px solid var(--border); border-radius:999px; padding:0.25rem 0.75rem; font-size:0.75rem; font-weight:600; color:var(--text-muted);">
@@ -151,10 +153,11 @@
       <style>@keyframes pulseGreen { 0% { box-shadow: 0 0 0 0 rgba(40,167,69,0.4); } 70% { box-shadow: 0 0 0 6px rgba(40,167,69,0); } 100% { box-shadow: 0 0 0 0 rgba(40,167,69,0); } }</style>
       <h1>Where creative instinct<br>meets <em>analytical precision.</em></h1>
       <p class="hero-blurb">
-        I build campaigns that convert and systems that scale. My work is backed by design training from Parsons and a data first mindset sharpened at TBS Barcelona.
+        A strategic marketer and data analyst bridging the gap between creative brand storytelling and technical growth. I specialize in transforming complex consumer data into actionable digital strategies for evolving brands.
       </p>
       <div class="hero-ctas">
-        <a href="experience.html" class="btn btn-primary">View my experience &rarr;</a>
+        <a href="projects.html" class="btn btn-primary">View My Work</a>
+        <a href="experience.html" class="btn btn-outline" style="color:var(--accent); border-color:var(--accent);">View my experience &rarr;</a>
         <a href="#" class="btn btn-ghost-accent">Download CV</a>
       </div>
     </div>
@@ -183,21 +186,40 @@
     <div class="divider"></div>
     <div class="preview-grid">
       <a href="about.html" class="card fade-up">
-        <img src="https://images.unsplash.com/photo-1542435503-956c24b914b1?q=80&w=800&auto=format&fit=crop" alt="Chloe Wade Working" style="margin-bottom:1rem;">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1542435503-956c24b914b1?q=80&w=800&auto=format&fit=crop" alt="Chloe Wade Working" loading="lazy">
+        </div>
         <h3>About Chloe</h3>
         <p>Parsons BFA and TBS MSc. I am the rare hybrid who can sketch a brand and query a database.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">#CreativeStrategy</span>
+          <span class="skill-tag">#DataAnalyst</span>
+        </div>
         <div style="margin-top:1rem; color:var(--accent); font-weight:700; font-size:0.85rem;">Learn more</div>
       </a>
       <a href="skills.html" class="card fade-up delay-1">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Data Analytics Screens" style="margin-bottom:1rem;">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Data Analytics Screens" loading="lazy">
+        </div>
         <h3>Skills & Expertise</h3>
         <p>From Google Analytics to Adobe Creative Suite. I leverage the full analytical and creative stack.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">#Python</span>
+          <span class="skill-tag">#SQL</span>
+          <span class="skill-tag">#AdobeSuite</span>
+        </div>
         <div style="margin-top:1rem; color:var(--accent); font-weight:700; font-size:0.85rem;">Explore skills</div>
       </a>
       <a href="experience.html" class="card fade-up delay-2">
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Marketing Strategy Meeting" style="margin-bottom:1rem;">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Marketing Strategy Meeting" loading="lazy">
+        </div>
         <h3>Professional Experience</h3>
         <p>Fashion and E-commerce product development. Real results backed by real numbers.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">#Strategy</span>
+          <span class="skill-tag">#E-commerce</span>
+        </div>
         <div style="margin-top:1rem; color:var(--accent); font-weight:700; font-size:0.85rem;">View timeline</div>
       </a>
     </div>
@@ -217,6 +239,12 @@
 </footer>
 
 <script>
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) nav.classList.add('sticky');
+    else nav.classList.remove('sticky');
+  });
+
   const toggle = document.getElementById('navToggle');
   const mobile = document.getElementById('navMobile');
   toggle.addEventListener('click', () => {

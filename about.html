@@ -127,7 +127,7 @@
       <div class="fade-up delay-1">
         <div class="avatar-card">
           <div class="avatar-wrap">
-            <div class="img-placeholder">Avatar Placeholder</div>
+            <img src="Headshot.jpg" alt="Chloe Wade Headshot" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
           <div class="avatar-name">Chloe Wade</div>
           <div class="avatar-title">Marketing Strategist & Analyst</div>
@@ -147,12 +147,18 @@
 
     <div class="edu-timeline">
       <div class="edu-item fade-up">
-        <div class="edu-year">2024 / 2026</div>
+        <div class="edu-year">Graduating May 2026</div>
         <div class="edu-school">TBS Education / Barcelona</div>
         <div class="edu-degree">MSc in Digital Marketing & Analytics</div>
+        
+        <div style="margin-top: 1.5rem;">
+          <h4 style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.75rem;">Relevant Coursework</h4>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-muted);">
+            Consumer Psychology and Culture, Advanced Market Research, Digital Marketing and Social Media, Marketing Ethics and Social Responsibility, Marketing in a Global World, Marketing & Innovation, Digital Marketing Strategy, UX/UI Web Design, Short Video Metrics, Digital Ads, E-Commerce, Marketing Automation, Web and Mobile Analytics, Data Visualization, Python, R, AI and Machine Learning, Causal Inference in Marketing, Social and Ethical Implications of Emerging Technologies.
+          </p>
+        </div>
       </div>
       <div class="edu-item fade-up delay-1">
-        <div class="edu-year">2019 / 2023</div>
         <div class="edu-school">Parsons School of Design / New York</div>
         <div class="edu-degree">BFA in Fashion Design / Honors</div>
       </div>
@@ -173,6 +179,13 @@
 </footer>
 
 <script>
+  
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) nav.classList.add('sticky');
+    else nav.classList.remove('sticky');
+  });
+
   const toggle = document.getElementById('navToggle');
   const mobile = document.getElementById('navMobile');
   toggle.addEventListener('click', () => {
