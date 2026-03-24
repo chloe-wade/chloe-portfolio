@@ -31,16 +31,18 @@
 
     @media (max-width: 900px) { .contact-main { grid-template-columns: 1fr; gap: 3rem; } }
   </style>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='white'/><text x='50' y='65' fill='%23DB2763' font-size='50' font-family='Georgia, serif' font-weight='bold' text-anchor='middle'>CW</text></svg>">
 </head>
 <body>
 
 <nav class="nav">
-  <a href="index.html" class="nav-logo">Chloe<span>.</span></a>
+  <a href="index.html" class="nav-logo">Chloe Wade</a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="skills.html">Skills</a></li>
     <li><a href="experience.html">Experience</a></li>
+    <li><a href="projects.html">Projects</a></li>
     <li><a href="contact.html" class="active">Contact</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -52,6 +54,7 @@
   <a href="about.html">About</a>
   <a href="skills.html">Skills</a>
   <a href="experience.html">Experience</a>
+  <a href="projects.html">Projects</a>
   <a href="contact.html" class="active">Contact</a>
 </div>
 
@@ -107,10 +110,10 @@
 
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">Chloe<span>.</span>Wade</div>
+    <div class="footer-logo">Chloe Wade</div>
     <div class="footer-links">
       <a href="mailto:chloevwade@gmail.com">chloevwade@gmail.com</a>
-      <a href="#">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/chloe-wade-a02747185/">LinkedIn</a>
       <a href="contact.html">Contact</a>
     </div>
   </div>
@@ -125,10 +128,15 @@
     mobile.classList.toggle('open');
   });
 
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReducedMotion) {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  } else {
+    document.querySelectorAll('.fade-up').forEach(el => { el.classList.add('visible'); el.style.transition = 'none'; });
+  }
 </script>
 <script src="chat-widget.js"></script>
 </body>
