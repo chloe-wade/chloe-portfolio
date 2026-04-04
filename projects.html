@@ -257,8 +257,9 @@
     /* Project 2 Layout - Gallery Grid */
     .gallery-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 2rem;
+      max-width: 700px;
     }
     .gallery-card {
       border: 1px solid var(--border);
@@ -271,15 +272,8 @@
     .gallery-card:hover {
       border-color: var(--accent);
     }
-    .gallery-card:last-child {
-      grid-column: span 2;
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      align-items: center;
-    }
     @media (max-width: 900px) {
       .gallery-grid { grid-template-columns: 1fr; }
-      .gallery-card:last-child { grid-column: span 1; grid-template-columns: 1fr; }
     }
 
     .placeholder-box {
@@ -394,9 +388,6 @@
     <div class="hero-watermark" aria-hidden="true">&rarr;</div>
     <div class="proj-hero-eyebrow fade-up">
       <span>Proof of Work</span>
-      <div class="status-badge">
-        <span class="status-dot"></span> Open to roles from June 2026
-      </div>
     </div>
     <h1 class="fade-up delay-1">
       Case studies, systems, and creative work 
@@ -623,11 +614,8 @@
     <div class="gallery-grid">
       <!-- Card A -->
       <article class="gallery-card fade-up">
-        <div class="placeholder-box aspect-landscape">
-          <div class="placeholder-inner">
-            <span>800 × 500</span>
-            <!-- INSERT IMAGE: meg-landing-page.jpg -->
-          </div>
+        <div style="width:100%; overflow:hidden;">
+          <img src="images/meg_homepage_fw22.png" alt="Meg by Meghan Kinney - E-Commerce Landing Page Redesign" loading="lazy" style="width:100%; height:auto; display:block; border-radius:0;">
         </div>
         <div class="card-content">
           <h3>E-Commerce Landing Page Redesign</h3>
@@ -649,65 +637,8 @@
           </div>
         </div>
       </article>
-
-      <!-- Card B -->
-      <article class="gallery-card fade-up">
-        <div class="placeholder-box aspect-landscape">
-          <div class="placeholder-inner">
-            <span>800 × 500</span>
-            <!-- INSERT IMAGE: meg-google-ads.jpg -->
-          </div>
-        </div>
-        <div class="card-content">
-          <h3>Google Ads Campaign Creative</h3>
-          <div class="card-meta">
-            <dl>
-              <dt>Brand</dt><dd>Meg by Meghan Kinney</dd>
-              <dt>Brief</dt><dd>Increase ROAS through better ad-to-landing-page message match</dd>
-              <dt>Tools</dt><dd>Google Ads, Adobe Illustrator</dd>
-            </dl>
-          </div>
-          <div class="skill-tags">
-            <span class="skill-tag">#GoogleAds</span>
-            <span class="skill-tag">#ROAS</span>
-            <span class="skill-tag">#AdobeSuite</span>
-          </div>
-          <div class="design-decision">
-            <span class="decision-label">Design decision</span>
-            <p class="decision-text">"I aligned ad headline copy directly with the landing page H1 to improve Quality Score and reduce cost per click."</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card C -->
-      <article class="gallery-card fade-up">
-        <div class="placeholder-box aspect-portrait" style="height: 100%;">
-          <div class="placeholder-inner">
-            <span>600 × 800</span>
-            <!-- INSERT IMAGE: meg-email-sequence.jpg -->
-          </div>
-        </div>
-        <div class="card-content">
-          <h3>Email Marketing Sequence</h3>
-          <div class="card-meta">
-            <dl>
-              <dt>Brand</dt><dd>Meg by Meghan Kinney</dd>
-              <dt>Brief</dt><dd>Re-engage lapsed customers with a 3-part drip sequence</dd>
-              <dt>Tools</dt><dd>Email platform, Canva, Adobe</dd>
-            </dl>
-          </div>
-          <div class="skill-tags">
-            <span class="skill-tag">#EmailMarketing</span>
-            <span class="skill-tag">#Segmentation</span>
-            <span class="skill-tag">#AdobeSuite</span>
-          </div>
-          <div class="design-decision">
-            <span class="decision-label">Design decision</span>
-            <p class="decision-text">"I used behavioral segmentation to trigger the sequence based on last purchase date rather than blasting the full list."</p>
-          </div>
-        </div>
-      </article>
     </div>
+
   </section>
 
   
@@ -728,7 +659,7 @@
   <div class="footer-inner">
     <div class="footer-logo">Chloe Wade</div>
     <div class="footer-links">
-      <a href="mailto:chloevwade@gmail.com">chloevwade@gmail.com</a>
+      <a href="mailto:chloevwade@gmail.com">Email Me</a>
       <a href="https://www.linkedin.com/in/chloe-wade-a02747185/">LinkedIn</a>
       <a href="contact.html">Contact</a>
     </div>
